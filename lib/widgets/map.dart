@@ -8,13 +8,13 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
-  final API_KEY = ""; // API KEY를 넣어주세요
+  final API_KEY = {secrets.ADDRESS}; // API KEY를 넣어주세요
 
   Widget getMap() {
     // ignore: undefined_prefixed_name
     ui.platformViewRegistry.registerViewFactory('iframe', (int viewId) {
       var iframe = html.IFrameElement();
-      iframe.src = 'https://www.google.com/maps/embed/v1/place?key=$API_KEY&q=뮤지엄웨딩홀'; // embedded google map url
+      iframe.src = 'https://www.google.com/maps/embed/v1/place?key=$API_KEY&q=유성컨벤션웨딩홀'; // embedded google map url
       return iframe;
     });
 
