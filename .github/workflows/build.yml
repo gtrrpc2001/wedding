@@ -25,4 +25,17 @@ jobs:
           channel: dev
       - run: flutter config --enable-web
       - run: flutter pub get
-      - run: flutter test
+      - run: flutter build web
+      - name: Deploy to GH Pages
+        run:
+          cd build/web
+          git init
+          git config --global user.email cbdgjs3548@naver.com
+          git config --global user.name gtrrpc2001
+          git status
+          git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/test.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
+      
