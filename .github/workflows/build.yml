@@ -27,7 +27,7 @@ jobs:
       - run: flutter config    
       - run: flutter devices
       - run: flutter pub get
-      - run: flutter run -d chrome
+      - run: flutter build web --release
       - name: Deploy to GH Pages
         run:
           cd build/web
