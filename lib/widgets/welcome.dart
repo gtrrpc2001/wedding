@@ -39,6 +39,7 @@ class Welcome extends StatelessWidget {
           style: TextStyle(fontSize: 15, color: Colors.black),
           textAlign: TextAlign.center,
         ),
+        Divider(color: Colors.black45, thickness: 1.0,)
       ],
     );
   }
