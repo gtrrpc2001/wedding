@@ -21,10 +21,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3      
         with:
-          channel: 'main'
+          channel: 'main'          
       - run: flutter config --enable-web
+      - run: flutter devices
       - run: flutter pub get
-      - run: flutter build web
+      - run: flutter run -d chrome
       - name: Deploy to GH Pages
         run:
           cd build/web
