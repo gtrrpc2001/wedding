@@ -39,7 +39,7 @@ class _MapState extends State<Map> {
               child: getMap(),
             ),
             SizedBox(height: 20),
-            Text('서울 용산구 이태원로 29 뮤지엄웨딩홀, \n3층 무궁화홀',
+            Text(addrList[0].date,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
           ],
