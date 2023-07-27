@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
   runApp(MyApp());
 }
 
