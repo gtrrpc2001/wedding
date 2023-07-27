@@ -47,7 +47,7 @@ class Welcome extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.9,
       margin: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0.0),
-      decoration: BoxDecoration(border: Border.all(color: Colors.black38)),
+      decoration: BoxDecoration(border: Border.all(color: Colors.transparent)),
     );
   }
 
