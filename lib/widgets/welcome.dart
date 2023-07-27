@@ -30,7 +30,7 @@ class Welcome extends StatelessWidget {
     return Column(
       children: [
         Text(
-          '2023.7.26 토요일 낮 12시 30분',
+          datesList[0].date,
           style: TextStyle(fontSize: 18),
         ),
         SizedBox(height: 10),
