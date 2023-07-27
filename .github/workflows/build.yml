@@ -28,8 +28,7 @@ jobs:
       - run: flutter devices
       - run: flutter pub get
       - run: flutter build web --release      
-      - run:
-          cd build/web
+      - run:          
           git init
           git config --global user.email cbdgjs3548@naver.com
           git config --global user.name gtrrpc2001
