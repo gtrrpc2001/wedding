@@ -24,9 +24,7 @@ jobs:
       - run: flutter pub get
       - run: flutter build web --release      
       - run:          
-          git init
-          git config --global user.email cbdgjs3548@naver.com
-          git config --global user.name gtrrpc2001
+          git init          
           git status
           git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/wedding.git
           git checkout -b gh-pages
