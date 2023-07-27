@@ -19,8 +19,7 @@ jobs:
     env:
       my_secret: ${{secrets.TOKEN_CODE}}
     steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v1
+      - uses: actions/checkout@v3      
         with:
           channel: 'main'
       - run: flutter config --enable-web
