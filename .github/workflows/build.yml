@@ -28,7 +28,7 @@ jobs:
           git status
           git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/wedding.git
           git checkout -b gh-pages
-          git add --all
+          git add .
           git commit -m "update"
           git push origin gh-pages -f
           
