@@ -7,35 +7,15 @@ name: flutter
 
 on:
   push:
-    branches: 
-    - main
-  pull_request:
-    branches: 
-    - main
-
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      my_secret: ${{secrets.TOKEN_CODE}}
-
+    
     steps:
       - uses: actions/checkout@v3   
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'beta' 
-      - run: flutter config    
-      - run: flutter devices
-      - run: flutter pub get
-      - run: flutter build web --release      
-      - run:          
-          git init
-          git config -- user.email cbdgjs3548@naver.com
-          git config -- user.name gtrrpc2001
-          git status
-          git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/wedding.git
-          git checkout -b gh-pages
-          git add --all
-          git commit -m "update"
-          git push origin gh-pages -f
+          baseHref: /wedding/
+          
       
