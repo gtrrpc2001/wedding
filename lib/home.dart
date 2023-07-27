@@ -21,6 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Welcome(),
+            CustomDivider(),
             Introduction(),
             CustomDivider(),
             Gallery(),
