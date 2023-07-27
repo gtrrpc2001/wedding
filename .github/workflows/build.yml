@@ -12,7 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      my_secret: ${{secrets.TOKEN_CODE}}
+      my_secret: ${{secrets.ADDRESS}}
 
     steps:
       - uses: actions/checkout@v3   
