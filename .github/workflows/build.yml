@@ -18,10 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       my_secret: ${{secrets.TOKEN_CODE}}
+
     steps:
       - uses: actions/checkout@v3      
         with:
-          channel: 'main'         
+          channel: 'beta' 
+      - run: flutter config    
       - run: flutter devices
       - run: flutter pub get
       - run: flutter run -d chrome
