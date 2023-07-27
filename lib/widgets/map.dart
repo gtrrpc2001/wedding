@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 import 'dart:ui' as ui;
+import 'package:wedding_invitation_flutter/model/editdate.dart';
 
 class Map extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
-  final API_KEY = {secrets.ADDRESS}; // API KEY를 넣어주세요
+  final API_KEY = ${{secrets.ADDRESS}}; // API KEY를 넣어주세요
 
   Widget getMap() {
     // ignore: undefined_prefixed_name
