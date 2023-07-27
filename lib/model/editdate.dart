@@ -11,4 +11,4 @@ final datesList = <dateList>[
 
 ];
 
-final addrList = <dateList>[dateList(date: '서울 용산구 이태원로 29 뮤지엄웨딩홀, \n3층 무궁화홀')];
+final addrList = <dateList>[dateList(date: '대전 유성구 온천북로 77 유성컨벤션웨딩홀, \n3층 무궁화홀')];
