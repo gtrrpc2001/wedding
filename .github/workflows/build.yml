@@ -23,6 +23,6 @@ jobs:
       - run: flutter devices
       - run: flutter pub add flutter_dotenv
       - run: flutter pub get
-      - run: flutter run
+      - run: flutter run -d chrome
 
       
