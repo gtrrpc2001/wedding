@@ -6,7 +6,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 class CongratulationGift extends StatelessWidget {
   
   void SetClipboard(BuildContext context, String accountNumber) {
-    Clipboard.setData(new ClipboardData(text: accountNumber)).then((value) =>
+    Clipboard.setData(ClipboardData(text: accountNumber)).then((value) =>
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("계좌번호가 복사되었습니다"))));
   }
