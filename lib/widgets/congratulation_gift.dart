@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
+//import 'package:get/get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class CongratulationGift extends StatelessWidget {
@@ -9,8 +9,8 @@ class CongratulationGift extends StatelessWidget {
     Clipboard.setData(ClipboardData(text: accountNumber)).then((value) =>
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("계좌번호가 복사되었습니다"))));
-    Clipboard.setData(ClipboardData(text: accountNumber));
-    Get.snackbar('Message','계좌번호가 복사되었습니다');
+    //Clipboard.setData(ClipboardData(text: accountNumber));
+    //Get.snackbar('Message','계좌번호가 복사되었습니다');
   }
 
   Widget _buildButton(BuildContext context, String receiver, accountNumber) {
