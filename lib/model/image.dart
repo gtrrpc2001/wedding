@@ -31,4 +31,22 @@ final imageItems = <ImageItem>[
   ImageItem(
     imageUrl: 'assets/images/water.jpg',
   ),
+  ImageItem(
+    imageUrl: 'assets/images/8.jpg',
+  ),
+  ImageItem(
+    imageUrl: 'assets/images/9.jpg',
+  ),
+  ImageItem(
+    imageUrl: 'assets/images/10.jpg',
+  ),
+  ImageItem(
+    imageUrl: 'assets/images/11.jpg',
+  ),
+  ImageItem(
+    imageUrl: 'assets/images/12.jpg',
+  ),
+  ImageItem(
+    imageUrl: 'assets/images/13.jpg',
+  ),
 ];
