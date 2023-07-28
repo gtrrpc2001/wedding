@@ -77,7 +77,7 @@ class _Gallery extends State<Gallery>{
                   }else{
                     idx = moveIndex!;
                   }
-                  print(idx);
+                  //print(idx);
                   final item = imageItems[idx];
                   final pageVisibility =
                   visibilityResolver.resolvePageVisibility(idx);
