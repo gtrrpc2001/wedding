@@ -46,7 +46,7 @@ class CongratulationGift extends StatelessWidget {
             SizedBox(height: 50),
             _buildButton(context, '신랑 이충헌', '카카오뱅크 3333-24-8680799'),
             SizedBox(height: 20),
-            _buildButton(context, '신부 김채은', '하나은행 702-910962-53707'),
+            _buildButton(context, '신부 이알레이나', '하나은행 702-910962-53707'),
           ],
         ));
   }
