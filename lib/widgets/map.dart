@@ -10,7 +10,7 @@ class Map extends StatefulWidget {
 }
 
 class _MapState extends State<Map> {
-  final API_KEY = dotenv.get("secrets.ADDRESS"); //""; // API KEY를 넣어주세요
+  final API_KEY = dotenv.get("API_KEY"); //""; // API KEY를 넣어주세요
 
   Widget getMap() {
     // ignore: undefined_prefixed_name
