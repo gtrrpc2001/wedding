@@ -29,7 +29,7 @@ jobs:
           git config --global user.email cbdgjs3548@naver.com
           git config --global user.name gtrrpc2001
           git status
-          git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/wedding.git
+          git remote add origin https://${{secrets.TOKEN_CODE}}@github.com/gtrrpc2001/wedding
           git checkout -b gh-pages
           git add .
           git commit -m "update"
