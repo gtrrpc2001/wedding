@@ -4,7 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class CongratulationGift extends StatelessWidget {
-  void onPressed(BuildContext context, String accountNumber) {
+  
+  void SetClipboard(BuildContext context, String accountNumber) {
     Clipboard.setData(new ClipboardData(text: accountNumber)).then((value) =>
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("계좌번호가 복사되었습니다"))));
@@ -22,7 +23,7 @@ class CongratulationGift extends StatelessWidget {
           ),
           SizedBox(width: 20),
           TextButton(
-              onPressed: () => onPressed(context, accountNumber),
+              onPressed: () => SetClipboard(context, accountNumber),
               child: AutoSizeText(
                 accountNumber,
                 maxLines: 2,
