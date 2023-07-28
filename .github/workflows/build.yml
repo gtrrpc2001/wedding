@@ -24,6 +24,6 @@ jobs:
       - run: flutter devices
       - run: flutter pub add flutter_dotenv
       - run: flutter pub get
-      - run: flutter build web -release
+      - run: flutter build web --release
 
       
