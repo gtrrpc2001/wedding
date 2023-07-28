@@ -34,7 +34,46 @@ class CongratulationGift extends StatelessWidget {
       ),
     );
   }
+Widget _noClipboardButton(BuildContext context, String receiver) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+              onPressed: () {
+                 setState(() {
+                    _visible = true;
+                  });
 
+              },//=> onPressed(context, accountNumber),
+              child: AutoSizeText(
+                receiver,
+                maxLines: 2,
+              )),
+        ],
+      ),
+    );
+  }
+
+  Widget GetVisibleText(_visible){
+    return Visibility(
+      child: Container(
+        child: Column(
+          children: [
+            SizedBox(height: 20),
+            SelectableText('신랑 이충헌 : 카카오뱅크 3333-24-8680799',style: TextStyle(),),
+            SizedBox(height: 20),
+            SelectableText('신부 이알레이나 : 하나은행 702-910962-53707'),
+          ],
+        ),
+      ),
+      visible: _visible,
+    );
+  }
+
+  bool _visible = false;
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,6 +89,9 @@ class CongratulationGift extends StatelessWidget {
             _buildButton(context, '신랑 이충헌', '카카오뱅크 3333-24-8680799'),
             SizedBox(height: 20),
             _buildButton(context, '신부 이알레이나', '하나은행 702-910962-53707'),
+            SizedBox(height: 20),
+            _noClipboardButton(context,'계자번호가 복사가 안될 경우 클릭'),
+            GetVisibleText(_visible),
           ],
         ));
   }
