@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:wedding_invitation_flutter/model/image.dart';
 import 'package:wedding_invitation_flutter/widgets/image_card.dart';
 import 'package:wedding_invitation_flutter/widgets/page_transformer.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Gallery extends StatefulWidget {
   Gallery({Key? key}): super(key:key);
@@ -21,7 +22,7 @@ class _Gallery extends State<Gallery>{
   void initState() {
     Timer.periodic(Duration(seconds: 3), (Timer timer) {
       setState(() {
-        if (7 > moveIndex!) {
+        if (12 > moveIndex!) {
           int index = moveIndex!;
           moveIndex = index + 1  ;
         } else {
@@ -64,35 +65,65 @@ class _Gallery extends State<Gallery>{
         _buildTitleText(),
         SizedBox(height: 50.0),
         SizedBox.fromSize(
-          size: const Size.fromHeight(500.0),
-          child: PageTransformer(
-            pageViewBuilder: (context, visibilityResolver) {
-              return PageView.builder(
-                controller: PageController(viewportFraction: 0.85),
-                itemCount: imageItems.length,
-                itemBuilder: (context, index) {
-                  int idx;
-                  if(moveIndex! < index){
-                    idx = index;
-                  }else{
-                    idx = moveIndex!;
-                  }
-                  //print(idx);
-                  final item = imageItems[idx];
-                  final pageVisibility =
-                  visibilityResolver.resolvePageVisibility(idx);
-
-                  return ImageCardItem(
-                    item: item,
-                    pageVisibility: pageVisibility,
-                  );
-                },
-              );
-            },
-          ),
+          size: const Size.fromHeight(800.0),
+          child: _pageOfMiddle()
         ),
       ],
     );
   }
+
+ Widget _pageOfMiddle(){
+    return CarouselSlider(
+options: CarouselOptions(
+  height: MediaQuery.of(context).size.height,
+autoPlay: true,
+),
+      items: pictureLists.map((url) {
+        return Builder(
+            builder: (BuildContext context) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Image.asset(
+                    url,
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              );
+            });
+      }).toList(),
+    );
+ }
+  Widget getPageTransformer(){
+    return PageTransformer(
+      pageViewBuilder: (context, visibilityResolver) {
+        return PageView.builder(
+          controller: PageController(viewportFraction: 0.85),
+          itemCount: imageItems.length,
+          itemBuilder: (context, index) {
+            int idx;
+            if(moveIndex! < index){
+              idx = index;
+            }else{
+              idx = moveIndex!;
+            }
+            //print(idx);
+            final item = imageItems[idx];
+            final pageVisibility =
+            visibilityResolver.resolvePageVisibility(idx);
+
+            return ImageCardItem(
+              item: item,
+              pageVisibility: pageVisibility,
+            );
+          },
+        );
+      },
+    );
+  }
+
+
 
 }
