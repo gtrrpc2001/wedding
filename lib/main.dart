@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() async {
+void main() {
   //WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");  
+  //await dotenv.load(fileName: ".env");  
   runApp(MyApp());
   
 }
